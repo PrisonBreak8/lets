@@ -1,15 +1,273 @@
 //====================================================================================================
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-bottom: $border;
+	padding: rem(10) 0;
+	z-index: 50;
+	// .header__container
+	&__container {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("min-height", 60, 50);
+		@media (max-width: $mobile) {
+			@include adaptiveValue("gap", 30, 20, 1170, 320, 1);
+		}
+	}
+	// header__column
+	&__column {
+		flex: 0 0 220px;
+		width: 220px;
+		@media (max-width: $tablet) {
+			flex: 0 0 160px;
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 0 120px;
+		}
+		&--wide {
+			flex: 1 1 auto;
+		}
+	}
+	// .header__logo
+	&__logo {
+		position: relative;
+		text-transform: capitalize;
+		@include adaptiveValue("font-size", 24, 20, 1170, 375, 1);
+		font-weight: 600;
+		line-height: 1.4;
+		z-index: 2;
+		transition: color 0.2s ease-in;
+		span {
+			color: $yellow;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: $yellow;
+			transition: width 0.2s;
+		}
+
+		&:hover::after {
+			width: 100%;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__icons
+	&__icons {
+		display: flex;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		@include adaptiveValue("gap", 20, 15, 1170, 375, 1);
+		//flex: 0 0 150px;
+		//width: 150px;
+	}
+	// .header__icon
+	&__icon {
+		font-size: rem(20);
+		color: $mainColor;
+		cursor: pointer;
+		transition: color 0.3s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+	// .header__icon--circle
+	&__icon--circle {
+		@extend %ic;
+		@extend ._icon-info;
+	}
+	// .header__icon--search
+	&__icon--search {
+		&:before {
+			@extend %ic;
+			@extend ._icon-search;
+		}
+	}
+	// .header__icon--user
+	&__icon--user {
+		@extend %ic;
+		@extend ._icon-register;
+	}
+}
+.menu {
+	//flex: 1 1 auto;
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		margin: 0 10px;
+		@media (max-width: $mobile) {
+			margin: 0;
+			position: fixed;
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: -120%;
+			right: 0;
+			@include adaptiveValue("padding-top", 120, 80);
+			padding-bottom: rem(30);
+			padding-right: rem(15);
+			padding-left: rem(15);
+			background-color: $white;
+			transition: left 0.3s ease-in;
+			// Плашка под которой будет меню проезжать
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				left: -120%;
+				top: 0;
+				transition: left 0.3s ease-in;
+				@include adaptiveValue("min-height", 80, 70);
+				background-color: $white;
+				//border-bottom: $border;
+			}
+			.menu-open & {
+				left: 0;
+				&::before {
+					content: "";
+					left: 0;
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		@include adaptiveValue("column-gap", 30, 20, 1170, 768, 1);
+		row-gap: rem(10);
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			row-gap: rem(30);
+		}
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		position: relative;
+		text-transform: capitalize;
+		font-size: 16px;
+		transition: color 0.3s ease-in;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -3px;
+			height: 2px;
+			width: 0;
+			left: 0;
+			background-color: $mainColor;
+			transition: width 0.3s ease-in;
+		}
+		&:hover::after {
+			width: 100%;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+			}
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+		}
+	}
+}
+//====================== SEARCH FORM ==============================================================================
+.header {
+	._active {
+		display: flex;
+	}
+	// .header__form
+	&__form {
+	}
+}
+.search-form {
+	position: absolute;
+	top: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+	@include adaptiveValue("	width", 800, 320, 1170, 375, 1);
+	background-color: $white;
+	box-shadow: $box-shadow;
+	padding: 10px;
+	display: none;
+	align-items: center;
+	gap: 20px;
+	border-radius: 5px;
+	animation: fadeIn 0.2s linear;
+	._active {
+		display: flex;
+	}
+
+	// .search-form__input
+	&__input {
+		width: 100%;
+		padding: 8px;
+		background-color: $light-bg;
+		color: $mainColor;
+		&::placeholder {
+			color: $mainColor;
+		}
+	}
+	// .search-form__label
+	&__label {
+	}
+	// .search-form__label--search
+	&__label--search {
+		@extend %ic;
+		@extend ._icon-search;
+		cursor: pointer;
+		margin: 0 10px 0 0;
+		transition: color 0.3s;
+		font-size: rem(20);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+}
+@keyframes fadeIn {
+	0% {
+		top: 50%;
+		opacity: 0;
+	}
+}
 
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: 30px;
+		flex: 0 0 30px;
 		height: 18px;
 		cursor: pointer;
 		z-index: 5;
@@ -22,7 +280,7 @@
 			position: absolute;
 			width: 100%;
 			height: 2px;
-			background-color: #000;
+			background-color: $yellow;
 		}
 		&::before {
 			top: 0px;
@@ -40,12 +298,13 @@
 			&::before {
 				transform: rotate(-45deg);
 				top: calc(50% - 1px);
+				background-color: #0000ff;
 			}
 			&::after {
 				transform: rotate(45deg);
 				bottom: calc(50% - 1px);
+				background-color: #0000ff;
 			}
 		}
 	}
 }
-*/

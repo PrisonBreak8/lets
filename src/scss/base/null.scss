@@ -16,6 +16,20 @@ a:focus,
 a:active {
 	// outline: none;
 }
+html {
+	&::-webkit-scrollbar {
+		width: 1rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $yellow;
+	}
+}
+
 html,
 body {
 	height: 100%;

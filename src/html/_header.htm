@@ -1,5 +1,34 @@
 <header class="header">
 	<div class="header__container">
+		<div class="header__column">
+			<a href="#" class="header__logo">about <span>me</span> </a>
+		</div>
 
+		<div class="header__column header__column--wide">
+			<div class="header__menu menu">
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="#" class="menu__link">home</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">about</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">projects</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">contact</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">blogs</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="header__column">
+			<div class="header__icons">
+				<div class="header__icon header__icon--circle"></div>
+				<div id="search-btn" class="header__icon header__icon--search"></div>
+				<div class="header__icon header__icon--user"></div>
+			</div>
+		</div>
+		<button type="button" class="menu__icon icon-menu"><span></span></button>
+
+		<form class="header__form search-form" action="#">
+			<input class="search-form__input" type="search" id="search-box" placeholder="search here...">
+			<label class="search-form__label search-form__label--search" for="search-box"></label>
+		</form>
 	</div>
 </header>
