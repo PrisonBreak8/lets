@@ -14,3 +14,46 @@
 		display: block;
 	}
 }
+
+._icon-arrow-left:before {
+	content: "\e900";
+}
+._icon-chevron-down:before {
+	content: "\e901";
+}
+._icon-arrow-right:before {
+	content: "\e902";
+}
+._icon-plus:before {
+	content: "\e903";
+}
+._icon-cart:before {
+	content: "\e904";
+}
+._icon-envelope:before {
+	content: "\e905";
+}
+._icon-facebook-social:before {
+	content: "\e906";
+}
+._icon-telegram-social:before {
+	content: "\e907";
+}
+._icon-github-social:before {
+	content: "\e908";
+}
+._icon-info:before {
+	content: "\e909";
+}
+._icon-place:before {
+	content: "\e90a";
+}
+._icon-register:before {
+	content: "\e90b";
+}
+._icon-search:before {
+	content: "\e90c";
+}
+._icon-tel:before {
+	content: "\e90d";
+}
