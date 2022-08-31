@@ -26,8 +26,7 @@
 		@media (max-width: $mobileSmall) {
 			flex: 0 0 120px;
 		}
-		&--wide {
-			flex: 1 1 auto;
+		&_wide {
 			flex: 1 1 auto;
 		}
 	}
@@ -89,19 +88,19 @@
 		}
 	}
 	// .header__icon--circle
-	&__icon--circle {
+	&__icon_circle {
 		@extend %ic;
 		@extend ._icon-info;
 	}
 	// .header__icon--search
-	&__icon--search {
+	&__icon_search {
 		&:before {
 			@extend %ic;
 			@extend ._icon-search;
 		}
 	}
 	// .header__icon--user
-	&__icon--user {
+	&__icon_user {
 		@extend %ic;
 		@extend ._icon-register;
 	}
@@ -197,15 +196,9 @@
 		}
 	}
 }
+
 //====================== SEARCH FORM ==============================================================================
-.header {
-	._active {
-		display: flex;
-	}
-	// .header__form
-	&__form {
-	}
-}
+
 .search-form {
 	position: absolute;
 	top: 120%;
@@ -238,7 +231,7 @@
 	&__label {
 	}
 	// .search-form__label--search
-	&__label--search {
+	&__label_search {
 		@extend %ic;
 		@extend ._icon-search;
 		cursor: pointer;

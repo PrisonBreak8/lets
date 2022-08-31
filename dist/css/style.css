@@ -48,7 +48,7 @@
   font-weight: 500;
   font-style: normal;
 }
-.search-form__label--search, .header__icon--user, .header__icon--search:before, .header__icon--circle, [class*=_icon-]:before {
+.search-form__label_search, .header__icon_user, .header__icon_search:before, .header__icon_circle, [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
   font-weight: normal;
@@ -99,7 +99,7 @@
   content: "\e908";
 }
 
-._icon-info:before, .header__icon--circle:before {
+._icon-info:before, .header__icon_circle:before {
   content: "\e909";
 }
 
@@ -107,11 +107,11 @@
   content: "\e90a";
 }
 
-._icon-register:before, .header__icon--user:before {
+._icon-register:before, .header__icon_user:before {
   content: "\e90b";
 }
 
-._icon-search:before, .search-form__label--search:before, .header__icon--search:before {
+._icon-search:before, .search-form__label_search:before, .header__icon_search:before {
   content: "\e90c";
 }
 
@@ -311,8 +311,7 @@ body {
     flex: 0 0 120px;
   }
 }
-.header__column--wide {
-  flex: 1 1 auto;
+.header__column_wide {
   flex: 1 1 auto;
 }
 .header__logo {
@@ -518,9 +517,6 @@ body {
   }
 }
 
-.header ._active {
-  display: flex;
-}
 .search-form {
   position: absolute;
   top: 120%;
@@ -562,14 +558,14 @@ body {
 .search-form__input::placeholder {
   color: #0000ff;
 }
-.search-form__label--search {
+.search-form__label_search {
   cursor: pointer;
   margin: 0 10px 0 0;
   transition: color 0.3s;
   font-size: 1.25rem;
 }
 @media (any-hover: hover) {
-  .search-form__label--search:hover {
+  .search-form__label_search:hover {
     color: #f5bf23;
   }
 }
