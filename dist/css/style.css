@@ -314,6 +314,16 @@ body {
 .header__column_wide {
   flex: 1 1 auto;
 }
+@media (max-width: 61.99875em) {
+  .header__column_wide {
+    flex: 1 1 auto;
+  }
+}
+@media (max-width: 29.99875em) {
+  .header__column_wide {
+    flex: 1 1 auto;
+  }
+}
 .header__logo {
   position: relative;
   text-transform: capitalize;

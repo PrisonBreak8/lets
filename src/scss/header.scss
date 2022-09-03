@@ -26,7 +26,13 @@
 		@media (max-width: $mobileSmall) {
 			flex: 0 0 120px;
 		}
-		&_wide {
+	}
+	&__column_wide {
+		flex: 1 1 auto;
+		@media (max-width: $tablet) {
+			flex: 1 1 auto;
+		}
+		@media (max-width: $mobileSmall) {
 			flex: 1 1 auto;
 		}
 	}
@@ -87,19 +93,19 @@
 			}
 		}
 	}
-	// .header__icon--circle
+	// .header__icon_circle
 	&__icon_circle {
 		@extend %ic;
 		@extend ._icon-info;
 	}
-	// .header__icon--search
+	// .header__icon_search
 	&__icon_search {
 		&:before {
 			@extend %ic;
 			@extend ._icon-search;
 		}
 	}
-	// .header__icon--user
+	// .header__icon_user
 	&__icon_user {
 		@extend %ic;
 		@extend ._icon-register;
@@ -230,7 +236,7 @@
 	// .search-form__label
 	&__label {
 	}
-	// .search-form__label--search
+	// .search-form__label_search
 	&__label_search {
 		@extend %ic;
 		@extend ._icon-search;
