@@ -1,4 +1,5 @@
 <header class="header">
+	<div class="dark"></div>
 	<div class="header__container">
 		<div class="header__column">
 			<a href="#" class="header__logo">about <span>me</span> </a>
@@ -19,9 +20,9 @@
 		</div>
 		<div class="header__column">
 			<div class="header__icons">
-				<div class="header__icon header__icon_circle"></div>
+				<div id="info-btn" class="header__icon header__icon_circle"></div>
 				<div id="search-btn" class="header__icon header__icon_search"></div>
-				<div class="header__icon header__icon_user"></div>
+				<div id="login-btn" class="header__icon header__icon_user"></div>
 			</div>
 		</div>
 		<button type="button" class="menu__icon icon-menu"><span></span></button>
@@ -30,5 +31,49 @@
 			<input class="search-form__input" type="search" id="search-box" placeholder="search here....">
 			<label class="search-form__label search-form__label_search" for="search-box"></label>
 		</form>
+
+		<form action="#" class="login-form">
+			<span class="login-form__title">Login form</span>
+			<input class="login-form__box" placeholder="enter your email" type="email">
+			<input class="login-form__box" placeholder="enter your password" type="password">
+
+			<div class="login-form__flex">
+				<input class="login-form__input" id="" type="checkbox" name="js-remember-me">
+				<label class="login-form__label" for="js-remember-me">remember me</label>
+				<a class="login-form__link" href="#">forgot pasword</a>
+			</div>
+			<input class="login-form__button" type="submit" value="login now">
+			<p class="login-form__text">don't have an account <a class="login-form__create" href="#">create one</a> </p>
+		</form>
+
 	</div>
 </header>
+
+<div class="contact-info">
+
+	<div id="close-contact-info" class="contact-info__arrow contact-info__icon_close"></div>
+
+	<div class="contact-info__info">
+		<a href="tel:+375293988681" class="contact-info__icon contact-info__icon_phone"></a>
+		<h3 class="contact-info__title">phone number</h3>
+		<a class="contact-info__number" href="tel:+375293988681">+375 29 39 88 681</a>
+	</div>
+
+	<div class="contact-info__info">
+		<a href="mailto:golubev.artur.1986@gmail.com" class="contact-info__icon contact-info__icon_envelope" target="_blank"></a>
+		<h3 class="contact-info__title">email address</h3>
+		<a class="contact-info__email" target="_blank" href="mailto:golubev.artur.1986@gmail.com">golubev.artur.1986@gmail.com</a>
+	</div>
+
+	<div class="contact-info__info">
+		<div class="contact-info__icon contact-info__icon_place"></div>
+		<h3 class="contact-info__title">place of residence</h3>
+		<span class="contact-info__address">Belarus - Minsk</span>
+	</div>
+
+	<div class="share">
+		<a class="share__link share__link_github" target="_blank" href=""></a>
+		<a class="share__link share__link_telegram" target="_blank" href=""></a>
+		<a class="share__link share__link_facebook" target="_blank" href=""></a>
+	</div>
+</div>

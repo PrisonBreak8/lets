@@ -1,3 +1,12 @@
+.dark._active {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, 0.6);
+	z-index: 6;
+	top: 0;
+	left: 0;
+}
 //====================================================================================================
 .header {
 	position: fixed;
@@ -7,6 +16,7 @@
 	border-bottom: $border;
 	padding: rem(10) 0;
 	z-index: 50;
+
 	// .header__container
 	&__container {
 		display: flex;
@@ -204,6 +214,12 @@
 }
 
 //====================== SEARCH FORM ==============================================================================
+.header {
+	// .header__form
+	//&__form._active {
+	//	display: flex;
+	//}
+}
 
 .search-form {
 	position: absolute;
@@ -219,7 +235,7 @@
 	gap: 20px;
 	border-radius: 5px;
 	animation: fadeIn 0.2s linear;
-	._active {
+	&._active {
 		display: flex;
 	}
 
@@ -251,6 +267,7 @@
 		}
 	}
 }
+
 @keyframes fadeIn {
 	0% {
 		top: 50%;
@@ -258,7 +275,267 @@
 	}
 }
 
-//====================================================================================================
+//====================== LOGIN FORM ==============================================================================
+.login-form {
+	position: absolute;
+	top: 200%;
+	left: 50%;
+	display: none;
+	transform: translateX(-50%);
+	@include adaptiveValue("	width", 550, 320, 1170, 375, 1);
+	background-color: $white;
+	box-shadow: $box-shadow;
+	padding: 25px;
+	border-radius: 5px;
+	text-align: center;
+	animation: fadeIn 0.2s linear;
+	&._active {
+		display: block;
+		z-index: 7;
+	}
+	// .login-form__title
+	&__title {
+		display: block;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: rem(26);
+		//padding: 15px;
+	}
+	// .login-form__box
+	&__box {
+		width: 100%;
+		padding: 8px 10px;
+		background-color: $light-color;
+		font-size: rem(16);
+		color: $mainColor;
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+	// .login-form__flex
+	&__flex {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		padding: 10px 0;
+	}
+	// .login-form__input
+	&__input {
+	}
+	// .login-form__label
+	&__label {
+		font-size: 16px;
+		cursor: pointer;
+		text-transform: capitalize;
+	}
+	// .login-form__link
+	&__link {
+		font-size: 16px;
+		margin-left: auto;
+		text-transform: capitalize;
+		transition: color 0.2s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+				text-decoration: underline;
+			}
+		}
+	}
+	// .login-form__button
+	&__button {
+		display: inline-block;
+		background-color: $btn-bg-color;
+		color: $white;
+		font-size: 18px;
+		padding: 10px 12px;
+		margin-top: 25px;
+		margin-bottom: 20px;
+		cursor: pointer;
+		text-transform: capitalize;
+		transition: background-color 0.3s, color 0.3s;
+		font-weight: 600;
+		width: 100%;
+		letter-spacing: 1.5px;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(245, 191, 35, 0.6);
+				color: $mainColor;
+			}
+		}
+	}
+	// .login-form__text
+	&__text {
+		font-size: 16px;
+		padding-top: 10px;
+	}
+	// .login-form__create
+	&__create {
+		text-transform: capitalize;
+		color: $yellow;
+		transition: color 0.2s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+//====================== SIDE PANEL ==============================================================================
+.contact-info {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: rem(400);
+	padding: 0 20px;
+	padding-top: 100px;
+	background-color: $white;
+	text-align: center;
+	display: none;
+	z-index: 100;
+	&._active {
+		display: block;
+	}
+	@keyframes fadeIn {
+		0% {
+			top: 20%;
+			//opacity: 0;
+		}
+	}
+	// .contact-info__arrow
+	&__arrow {
+		position: absolute;
+		top: 20px;
+		right: 185px;
+		cursor: pointer;
+		transition: color 0.2s ease-in, transform 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	// .contact-info__icon
+	&__icon {
+		// .contact-info__icon_close
+		&_close {
+			@extend %ic;
+			@extend ._icon-chevron-down;
+			font-size: rem(18);
+		}
+	}
+	// .contact-info__info
+	&__info {
+		margin-bottom: 25px;
+	}
+	// .contact-info__icon
+	&__icon {
+		margin-bottom: 15px;
+		cursor: pointer;
+		transition: color 0.2s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+			}
+		}
+
+		// .contact-info__icon_phone
+		&_phone {
+			@extend %ic;
+			@extend ._icon-tel;
+			font-size: rem(30);
+		}
+		// .contact-info__icon_envelope
+		&_envelope {
+			@extend %ic;
+			@extend ._icon-envelope;
+			font-size: rem(35);
+		}
+		// .contact-info__icon_place
+		&_place {
+			@extend %ic;
+			@extend ._icon-place;
+			font-size: rem(35);
+		}
+	}
+
+	// .contact-info__title
+	&__title {
+		font-size: rem(22);
+		text-transform: capitalize;
+		margin-bottom: 15px;
+	}
+	// .contact-info__address
+	&__address,
+	// .contact-info__email
+	&__email,
+	// .contact-info__number
+	&__number {
+		font-size: rem(18);
+	}
+
+	// .contact-info__number
+	&__number {
+		transition: color 0.2s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+				text-decoration: underline;
+			}
+		}
+	}
+	// .contact-info__email
+	&__email {
+		transition: color 0.2s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+				text-decoration: underline;
+			}
+		}
+	}
+	// .contact-info__address
+	&__address {
+	}
+}
+.share {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: rem(25);
+	border-top: $border;
+
+	// .share__link
+	&__link {
+		margin-top: 20px;
+		transition: color 0.2s ease-in;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $yellow;
+			}
+		}
+		// .share__link_github
+		&_github {
+			@extend %ic;
+			@extend ._icon-github-social;
+			font-size: rem(30);
+		}
+		// .share__link_telegram
+		&_telegram {
+			@extend %ic;
+			@extend ._icon-telegram-social;
+			font-size: rem(30);
+		}
+		// .share__link_facebook
+		&_facebook {
+			@extend %ic;
+			@extend ._icon-facebook-social;
+			font-size: rem(30);
+		}
+	}
+}
 
 //Burger
 
