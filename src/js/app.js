@@ -75,7 +75,7 @@ flsFunctions.menuInit();
 // flsFunctions.initParallaxMouse();
 
 // Работа с формами ========================================================================================================================================================================================================================================================
-import * as flsForms from "./files/forms/forms.js";
+//import * as flsForms from "./files/forms/forms.js";
 
 /* Работа с полями формы: добавление классов, работа с placeholder. */
 // flsForms.formFieldsInit();
@@ -124,6 +124,7 @@ import * as flsForms from "./files/forms/forms.js";
 Сниппет(HTML): swiper
 */
 //import "./files/sliders.js";
+import "./files/swiper-bundle.min.js";
 
 // Модули работы с прокруткой страницы ========================================================================================================================================================================================================================================================
 
@@ -144,12 +145,12 @@ import * as flsForms from "./files/forms/forms.js";
 // import './files/scroll/lazyload.js';
 
 // Функции работы скроллом ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-import * as flsScroll from "./files/scroll/scroll.js";
+//import * as flsScroll from "./files/scroll/scroll.js";
 
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация по работе в шаблоне: js/libs/watcher.js
 // Сниппет(HTML):
-// flsScroll.scrollWatcher();
+//flsScroll.scrollWatcher();
 
 // Плавная навигация по странице
 // flsScroll.pageNavigation();
