@@ -15,6 +15,7 @@
 	right: 0;
 	border-bottom: $border;
 	padding: rem(10) 0;
+	background-color: $light-bg;
 	z-index: 50;
 
 	// .header__container
@@ -268,13 +269,6 @@
 	}
 }
 
-@keyframes fadeIn {
-	0% {
-		top: 50%;
-		opacity: 0;
-	}
-}
-
 //====================== LOGIN FORM ==============================================================================
 .login-form {
 	position: absolute;
@@ -285,13 +279,19 @@
 	@include adaptiveValue("	width", 550, 320, 1170, 375, 1);
 	background-color: $white;
 	box-shadow: $box-shadow;
-	padding: 25px;
+	padding: 35px 25px;
 	border-radius: 5px;
 	text-align: center;
 	animation: fadeIn 0.2s linear;
 	&._active {
 		display: block;
 		z-index: 7;
+	}
+	@keyframes fadeIn {
+		0% {
+			top: 50%;
+			opacity: 0;
+		}
 	}
 	// .login-form__title
 	&__title {
@@ -394,15 +394,17 @@
 	text-align: center;
 	display: none;
 	z-index: 100;
+	animation: fadeRight 0.2s linear;
 	&._active {
 		display: block;
 	}
-	@keyframes fadeIn {
+	@keyframes fadeRight {
 		0% {
-			top: 20%;
-			//opacity: 0;
+			right: 50%;
+			opacity: 0;
 		}
 	}
+
 	// .contact-info__arrow
 	&__arrow {
 		position: absolute;
